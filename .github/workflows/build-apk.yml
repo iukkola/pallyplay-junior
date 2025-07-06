@@ -1,4 +1,4 @@
-name: Test Build
+name: Test
   on:
     push:
       branches: [main]
@@ -7,6 +7,4 @@ name: Test Build
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v4
-        - run: echo "Test works"
-  EOF
-
+        - run: echo Hello
