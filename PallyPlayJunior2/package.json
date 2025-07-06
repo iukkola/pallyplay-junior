@@ -1,5 +1,5 @@
 {
-  "name": "pallyplayjunior",
+  "name": "pallyplayjunior2",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -9,8 +9,6 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo/vector-icons": "^14.1.0",
-    "axios": "^1.10.0",
     "expo": "~53.0.17",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
