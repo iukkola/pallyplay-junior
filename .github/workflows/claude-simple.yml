@@ -1,0 +1,63 @@
+name: Claude Simple Bot
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  respond:
+    if: contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Respond to comment
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install anthropic
+          python -c "
+import os
+import json
+import urllib.request
+import urllib.parse
+from anthropic import Anthropic
+
+# GitHub event data
+event = json.loads(os.environ['GITHUB_EVENT_PATH'])
+with open(event, 'r') as f:
+    event_data = json.load(f)
+
+comment_body = event_data['comment']['body']
+issue_number = event_data['issue']['number']
+repo = event_data['repository']['full_name']
+
+# Remove @claude from message
+message = comment_body.replace('@claude', '').strip()
+
+# Get Claude response
+client = Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
+response = client.messages.create(
+    model='claude-3-haiku-20240307',
+    max_tokens=500,
+    messages=[{'role': 'user', 'content': message}]
+)
+
+# Post comment
+url = f'https://api.github.com/repos/{repo}/issues/{issue_number}/comments'
+data = json.dumps({'body': f'🤖 Claude: {response.content[0].text}'}).encode()
+req = urllib.request.Request(url, data=data, headers={
+    'Authorization': f'token {os.environ["GITHUB_TOKEN"]}',
+    'Accept': 'application/vnd.github.v3+json',
+    'Content-Type': 'application/json'
+})
+urllib.request.urlopen(req)
+"
