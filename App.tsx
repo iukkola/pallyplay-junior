@@ -1,8 +1,48 @@
 import { StatusBar } from 'expo-status-bar';
-  import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
+  import { StyleSheet, View, Text, ScrollView, TouchableOpacity, TextInput, Alert } from 'react-native';
   import { Ionicons } from '@expo/vector-icons';
+  import { useState } from 'react';
 
   export default function App() {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [password, setPassword] = useState('');
+    const correctPassword = 'pallyplay2024'; // Voit vaihtaa tämän haluamaksesi salasanaksi
+
+    const handleLogin = () => {
+      if (password === correctPassword) {
+        setIsAuthenticated(true);
+      } else {
+        Alert.alert('Virhe', 'Väärä salasana!');
+        setPassword('');
+      }
+    };
+
+    if (!isAuthenticated) {
+      return (
+        <View style={styles.container}>
+          <View style={styles.loginContainer}>
+            <Ionicons name="lock-closed-outline" size={80} color="#E30613" />
+            <Text style={styles.loginTitle}>PallyPlay Junior</Text>
+            <Text style={styles.loginSubtitle}>Syötä salasana päästäksesi sisään</Text>
+            
+            <TextInput
+              style={styles.passwordInput}
+              placeholder="Salasana"
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry
+              autoCapitalize="none"
+            />
+            
+            <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+              <Text style={styles.loginButtonText}>Kirjaudu sisään</Text>
+            </TouchableOpacity>
+          </View>
+          <StatusBar style="dark" />
+        </View>
+      );
+    }
+
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container}>
@@ -106,11 +146,57 @@ import { StatusBar } from 'expo-status-bar';
       paddingHorizontal: 16,
       borderRadius: 12,
       alignItems: 'center',
+      marginBottom: 12,
     },
     betButtonText: {
       color: '#fff',
       fontSize: 16,
       fontWeight: '600',
+    },
+    loginContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 20,
+      backgroundColor: '#f8f9fa',
+    },
+    loginTitle: {
+      fontSize: 28,
+      fontWeight: 'bold',
+      color: '#E30613',
+      marginTop: 20,
+      marginBottom: 8,
+    },
+    loginSubtitle: {
+      fontSize: 16,
+      color: '#666',
+      marginBottom: 40,
+      textAlign: 'center',
+    },
+    passwordInput: {
+      width: '100%',
+      maxWidth: 300,
+      height: 50,
+      borderWidth: 1,
+      borderColor: '#ddd',
+      borderRadius: 12,
+      paddingHorizontal: 16,
+      fontSize: 16,
+      backgroundColor: '#fff',
+      marginBottom: 20,
+    },
+    loginButton: {
+      width: '100%',
+      maxWidth: 300,
+      backgroundColor: '#E30613',
+      paddingVertical: 14,
+      borderRadius: 12,
+      alignItems: 'center',
+    },
+    loginButtonText: {
+      color: '#fff',
+      fontSize: 18,
+      fontWeight: 'bold',
     },
   });
 
