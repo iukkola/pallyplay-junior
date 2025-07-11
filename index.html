@@ -258,19 +258,35 @@
         }
         
         function checkPassword() {
-            const input = document.getElementById('passwordInput').value;
+            console.log('checkPassword called');
+            const input = document.getElementById('passwordInput');
+            const errorMsg = document.getElementById('errorMsg');
             
-            if (input === correctPassword) {
+            if (!input) {
+                console.error('Password input not found');
+                return;
+            }
+            
+            const password = input.value.trim();
+            console.log('Password length:', password.length);
+            
+            if (password === correctPassword) {
+                console.log('Password correct, showing protected content');
                 sessionStorage.setItem('pallyplayAuth', 'true');
                 showProtectedContent();
             } else {
-                document.getElementById('errorMsg').style.display = 'block';
-                document.getElementById('passwordInput').value = '';
-                document.getElementById('passwordInput').style.borderColor = '#ff6b6b';
+                console.log('Password incorrect');
+                if (errorMsg) {
+                    errorMsg.style.display = 'block';
+                }
+                input.value = '';
+                input.style.borderColor = '#ff6b6b';
                 
                 setTimeout(() => {
-                    document.getElementById('errorMsg').style.display = 'none';
-                    document.getElementById('passwordInput').style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                    if (errorMsg) {
+                        errorMsg.style.display = 'none';
+                    }
+                    input.style.borderColor = 'rgba(255, 255, 255, 0.3)';
                 }, 3000);
             }
         }
