@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PallyPlay - UEFA Partnership Initiative</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #003366 0%, #001133 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo {
+            font-size: 80px;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+        
+        .login-form {
+            margin-top: 30px;
+        }
+        
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        input[type="password"]::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #4a7c7e;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .error {
+            color: #ff6b6b;
+            margin-top: 15px;
+            display: none;
+            font-weight: 500;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+        
+        #protectedContent {
+            display: none;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        
+        .welcome-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .content-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .content-card h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #FFD700;
+        }
+        
+        .logout-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #fff;
+            transition: all 0.3s;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginContainer" class="container">
+        <div class="logo">⚽</div>
+        <h1>PallyPlay</h1>
+        <p class="subtitle">UEFA Partnership Initiative</p>
+        
+        <div class="login-form">
+            <input type="password" id="passwordInput" placeholder="Enter access code" onkeypress="if(event.key==='Enter') checkPassword()">
+            <button onclick="checkPassword()">Access Platform</button>
+            <p id="errorMsg" class="error">Incorrect password! Try again.</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 PallyPlay. UEFA Partnership Initiative.</p>
+        </div>
+    </div>
+    
+    <div id="protectedContent">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+        
+        <div class="welcome-section">
+            <h1>⚽ EMOTION • EXCITEMENT • RESPECT</h1>
+            <p>Football gaming that promotes UEFA values across Europe</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="content-card">
+                <h3>🎯 The Problem</h3>
+                <p>Young people across Europe face different social challenges:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>England:</strong> Online toxicity, lack of positive role models</li>
+                    <li><strong>France:</strong> Social fragmentation, community disconnect</li>
+                    <li><strong>Germany:</strong> Competition over values, fair play erosion</li>
+                    <li><strong>Sweden:</strong> Limited engagement with football heritage</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3>💡 Our Solution</h3>
+                <p><span class="highlight">"Statistics Go CRAZY WILD"</span> - Dynamic real-time engagement:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>Live Predictions:</strong> Rankings change with every goal, card, event</li>
+                    <li><strong>No Boring Moments:</strong> Excitement from kickoff to final whistle</li>
+                    <li><strong>Real-time XP:</strong> See your position change instantly</li>
+                    <li><strong>Values Integration:</strong> Post-match UEFA educational questions</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3>🏟️ Stadium Features</h3>
+                <p><span class="highlight">GPS-powered stadium communication</span> for live events:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>Auto Check-in:</strong> GPS detection at UEFA venues</li>
+                    <li><strong>Live Messages:</strong> Real-time communication with stadium fans</li>
+                    <li><strong>Custom Questions:</strong> Stadium-specific values challenges</li>
+                    <li><strong>Memory Collection:</strong> Digital passport of stadium visits</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3>🌍 Country-Specific Impact</h3>
+                <p>Tailored values education addressing local social issues:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>England:</strong> "How did you handle disagreement during the match?"</li>
+                    <li><strong>France:</strong> "Did you include everyone in group discussions?"</li>
+                    <li><strong>Germany:</strong> "Did you prioritize fair play over winning?"</li>
+                    <li><strong>Sweden:</strong> "Did you learn about football culture today?"</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3>🏆 UEFA Values Integration</h3>
+                <p>Core values become competitive gaming mechanics:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>RESPECT:</strong> Fair play recognition and peer support</li>
+                    <li><strong>UNITY:</strong> Cross-cultural group challenges</li>
+                    <li><strong>EXCELLENCE:</strong> Sportsmanship achievements</li>
+                    <li><strong>Impact:</strong> No values answers = No XP awarded</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>📱 Technical Innovation</h3>
+                <p><span class="highlight">Production-ready PWA</span> with real-time capabilities:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>Live Tracking:</strong> Dynamic statistics and rankings</li>
+                    <li><strong>Stadium GPS:</strong> Automatic venue detection</li>
+                    <li><strong>Social Groups:</strong> "Pallys" system for friend management</li>
+                    <li><strong>WhatsApp Integration:</strong> Seamless group invites</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>🎮 Dynamic Engagement</h3>
+                <p><span class="highlight">Revolutionary prediction system</span> eliminates boredom:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>First Goal Bet:</strong> Lead initially → goal scored → position changes</li>
+                    <li><strong>Card Predictions:</strong> Yellow card → rankings shuffle instantly</li>
+                    <li><strong>Live Leaderboards:</strong> Friends compete in real-time</li>
+                    <li><strong>Social Pressure:</strong> WhatsApp-style live notifications</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>🚀 Partnership Proposal</h3>
+                <p><span class="highlight">First-ever official UEFA values gaming platform:</span></p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>Pilot Program:</strong> Champions League qualifiers</li>
+                    <li><strong>Target:</strong> 200M+ young Europeans</li>
+                    <li><strong>Measurement:</strong> Quantifiable social impact</li>
+                    <li><strong>Legacy:</strong> Prevent problems, not just react</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const correctPassword = 'pallyplay2024';
+        
+        if (sessionStorage.getItem('pallyplayAuth') === 'true') {
+            showProtectedContent();
+        }
+        
+        function checkPassword() {
+            const input = document.getElementById('passwordInput');
+            const errorMsg = document.getElementById('errorMsg');
+            
+            if (!input) return;
+            
+            const password = input.value.trim();
+            
+            if (password === correctPassword) {
+                sessionStorage.setItem('pallyplayAuth', 'true');
+                showProtectedContent();
+            } else {
+                if (errorMsg) {
+                    errorMsg.style.display = 'block';
+                }
+                input.value = '';
+                input.style.borderColor = '#ff6b6b';
+                
+                setTimeout(() => {
+                    if (errorMsg) {
+                        errorMsg.style.display = 'none';
+                    }
+                    input.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                }, 3000);
+            }
+        }
+        
+        function showProtectedContent() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('protectedContent').style.display = 'block';
+            document.body.style.alignItems = 'flex-start';
+            document.body.style.padding = '20px';
+        }
+        
+        function logout() {
+            sessionStorage.removeItem('pallyplayAuth');
+            location.reload();
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('passwordInput');
+            if (input) {
+                input.focus();
+            }
+        });
+    </script>
+</body>
+</html>
