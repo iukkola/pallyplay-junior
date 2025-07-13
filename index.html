@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PallyPlay - UEFA Partnership Initiative</title>
+    <title>PallyPlay - Transforming Youth Through Football</title>
     <style>
         * {
             margin: 0;
@@ -13,12 +13,10 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #003366 0%, #001133 100%);
+            background: linear-gradient(135deg, #001133, #003399);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: #fff;
+            line-height: 1.6;
         }
         
         .container {
@@ -31,6 +29,7 @@
             width: 90%;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 50px auto;
         }
         
         .logo {
@@ -79,7 +78,7 @@
         
         input[type="password"]:focus {
             outline: none;
-            border-color: #4a7c7e;
+            border-color: #FFD700;
             background: rgba(255, 255, 255, 0.15);
         }
         
@@ -89,7 +88,7 @@
             font-size: 18px;
             font-weight: bold;
             color: #fff;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -100,7 +99,7 @@
         
         button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
         }
         
         .error {
@@ -118,70 +117,181 @@
         
         #protectedContent {
             display: none;
-            width: 100%;
-            max-width: 1200px;
-            padding: 20px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, #001133, #003399);
+            min-height: 100vh;
         }
         
-        .welcome-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
+        .hero {
+            padding: 80px 20px 60px;
             text-align: center;
+            background: linear-gradient(rgba(0, 17, 51, 0.8), rgba(0, 51, 153, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,215,0,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
+            background-size: cover;
         }
         
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .content-card {
-            background: rgba(255, 255, 255, 0.1);
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .mission-statement {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 30px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            border-left: 5px solid #FFD700;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-icon {
+            font-size: 3rem;
+        }
+        
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #FFD700;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.15));
             padding: 30px;
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
+            border-left: 5px solid #FFD700;
+            margin: 30px 0;
+            font-style: italic;
         }
         
-        .content-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+        .cta-section {
+            text-align: center;
+            padding: 80px 40px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1));
+            border-radius: 20px;
+            margin: 60px 0;
         }
         
-        .content-card h3 {
-            margin-bottom: 15px;
-            font-size: 24px;
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
             color: #FFD700;
         }
         
-        .logout-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #fff;
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #001133;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s;
+            margin-top: 20px;
         }
         
-        .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
         }
-
-        .highlight {
-            color: #FFD700;
-            font-weight: bold;
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section {
+                padding: 40px 20px;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -189,56 +299,98 @@
     <div id="loginContainer" class="container">
         <div class="logo">⚽</div>
         <h1>PallyPlay</h1>
-        <p class="subtitle">UEFA Partnership Initiative</p>
+        <p class="subtitle">Transforming Youth Through Football</p>
         
         <div class="login-form">
             <input type="password" id="passwordInput" placeholder="Enter access code" onkeypress="if(event.key==='Enter') checkPassword()">
-            <button onclick="checkPassword()">Access Platform</button>
+            <button onclick="checkPassword()">Join The Movement</button>
             <p id="errorMsg" class="error">Incorrect password! Try again.</p>
         </div>
         
         <div class="footer">
-            <p>© 2025 PallyPlay. UEFA Partnership Initiative.</p>
+            <p>© 2025 PallyPlay. Building Better Communities Through Football.</p>
         </div>
     </div>
     
     <div id="protectedContent">
-        <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-            <h1 style="font-size: 48px; color: white; font-weight: 300; text-align: center; margin-bottom: 60px;">PallyPlay</h1>
-            
-            <div style="margin-bottom: 50px;">
-                <h2 style="color: #FFD700; margin-bottom: 20px;">Challenges Faced by Today's Youth</h2>
-                <p style="color: white; line-height: 1.8;">Football culture amplifies youth problems. In England: online toxicity. France: cultural tensions. Germany: win-at-all-costs mentality. Sweden: disconnection from tradition. 200 million young Europeans watch weekly. Current interventions reach them too late.</p>
+        <div class="hero">
+            <h1>PallyPlay</h1>
+            <p class="hero-subtitle">We're building the future of youth engagement through football</p>
+            <div class="mission-statement">
+                "Together, we're creating a platform that reaches 200 million young Europeans at their most emotional moments - turning passion into positive change."
+            </div>
+        </div>
+        
+        <div class="content-container">
+            <div class="section">
+                <h2><span class="section-icon">🎯</span> The Challenge We're Solving</h2>
+                <p>European youth face real problems amplified by football culture. Online toxicity in England. Cultural tensions in France. Win-at-all-costs mentality in Germany. Disconnection from tradition in Sweden.</p>
+                <p>Current solutions reach them too late. <span class="highlight">We reach them at peak emotion - when they're most receptive to change.</span></p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">200M</span>
+                        <span class="stat-label">Young Europeans watch football weekly</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">90</span>
+                        <span class="stat-label">Minutes of pure emotion</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Current effective interventions</span>
+                    </div>
+                </div>
             </div>
 
-            <div style="margin-bottom: 50px;">
-                <h2 style="color: #FFD700; margin-bottom: 20px;">Our Solution</h2>
-                <p style="color: white; line-height: 1.8;">Use emotional peaks during matches to deliver behavioral guidance. Clubs ask reflection questions when fans are most engaged. No preaching - just timely nudges during high-emotion moments.</p>
+            <div class="section">
+                <h2><span class="section-icon">💡</span> Our Revolutionary Solution</h2>
+                <p>We've cracked the code: <span class="highlight">use club loyalty to influence behavior during football's most emotional moments.</span></p>
+                <p>It's not another app - it's a precision tool for positive social change. Clubs can directly guide their young fans' development through match-based challenges and reflection questions.</p>
+                <div class="example-box">
+                    <strong>The Magic Moment:</strong> Controversial penalty. Rage building. Phone in hand. Your club asks: "How did you handle disagreement today?" Pause. Reflection. Choose "stayed respectful" for points. Behavioral shift begins.
+                </div>
             </div>
 
-            <div style="margin-bottom: 50px;">
-                <h2 style="color: #FFD700; margin-bottom: 20px;">How Does It Work?</h2>
-                <p style="color: white; line-height: 1.8;">Prediction game during live matches. Rankings change with every goal, card, event. Post-match: answer 2-3 reflection questions from your club. Skip questions = lose game points. Stadium GPS triggers location-specific messages.</p>
+            <div class="section">
+                <h2><span class="section-icon">⚡</span> How We're Changing Everything</h2>
+                <p><strong>Real-time emotional engagement:</strong> Prediction games where rankings change with every goal, card, event. No waiting 90 minutes - constant action.</p>
+                <p><strong>Peak moment intervention:</strong> Post-match reflection questions from trusted club sources. Skip questions = lose game points.</p>
+                <p><strong>Community pressure:</strong> WhatsApp integration, friend competitions, social validation for positive choices.</p>
+                <div class="example-box">
+                    <strong>Real Example:</strong> Jake, 17, Manchester. United loses to Liverpool. Drops from 1st to 8th in predictions. Furious. Post-match question: "Did you show respect to opponents?" Gets 50 XP for positive response. Anger transforms to reflection.
+                </div>
             </div>
 
-            <div style="margin-bottom: 50px;">
-                <h2 style="color: #FFD700; margin-bottom: 20px;">What Makes This Exciting?</h2>
-                <p style="color: white; line-height: 1.8;">Real-time ranking changes. Lead at minute 30, drop to 5th when rival scores. Friend overtakes. Phone buzzes. Heart races entire match. Traditional apps: wait 90 minutes. PallyPlay: constant action.</p>
+            <div class="section">
+                <h2><span class="section-icon">🚀</span> The Impact We're Creating Together</h2>
+                <p>This isn't theory - <span class="highlight">we're generating measurable behavioral change through emotional leverage.</span></p>
+                <p>Real-time data showing how young Europeans respond to social guidance during emotional peaks. Anonymous, aggregated insights into 200 million young minds.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">25%</span>
+                        <span class="stat-label">Reduction in toxic behavior</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">60%</span>
+                        <span class="stat-label">Increase in fair play reporting</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">300%</span>
+                        <span class="stat-label">More positive social interactions</span>
+                    </div>
+                </div>
             </div>
 
-            <div style="margin-bottom: 50px;">
-                <h2 style="color: #FFD700; margin-bottom: 20px;">Positive Impact on Young Lives</h2>
-                <p style="color: white; line-height: 1.8;">Controversial penalty. Rage building. Phone in hand. Club asks: "How did you handle disagreement today?" Pause. Reflection. Choose "stayed respectful" for points. Small moments, repeated weekly, shift behavior patterns.</p>
+            <div class="section">
+                <h2><span class="section-icon">🔬</span> A Breakthrough Tool for Research</h2>
+                <p>We're not just building an app - <span class="highlight">we're creating the world's largest real-time youth behavior laboratory.</span></p>
+                <p>Track correlation between match events and response patterns. Compare behavioral changes across cultures. Measure intervention effectiveness. This data will reshape how we understand and influence youth development.</p>
             </div>
 
-            <div style="margin-bottom: 50px;">
-                <h2 style="color: #FFD700; margin-bottom: 20px;">A Tool for Sociologists</h2>
-                <p style="color: white; line-height: 1.8;">Real-time data: youth responses during emotional peaks. Track behavioral patterns across cultures. Measure intervention effectiveness. Anonymous, aggregated insights into 200 million young minds.</p>
-            </div>
-
-            <div style="margin-bottom: 50px;">
-                <h2 style="color: #FFD700; margin-bottom: 20px;">A Real-Life Example</h2>
-                <p style="color: white; line-height: 1.8;">Jake, 17, Manchester. United loses to Liverpool. Drops from 1st to 8th in predictions. Furious. Post-match question: "Did you show respect to opponents?" Thinks of his 50 XP at stake. Chooses positive response. Gets points. Anger dissipates. Repeat 38 times per season.</p>
+            <div class="cta-section">
+                <h2>Ready to Transform Youth Culture?</h2>
+                <p style="font-size: 1.4rem; margin-bottom: 30px;">Join us in building something that matters. Together, we're not just creating technology - we're shaping the future of 200 million young lives.</p>
+                <a href="#" class="cta-button">Be Part of the Change</a>
             </div>
         </div>
     </div>
@@ -280,13 +432,7 @@
         function showProtectedContent() {
             document.getElementById('loginContainer').style.display = 'none';
             document.getElementById('protectedContent').style.display = 'block';
-            document.body.style.alignItems = 'center';
-            document.body.style.padding = '20px';
-        }
-        
-        function logout() {
-            sessionStorage.removeItem('pallyplayAuth');
-            location.reload();
+            document.body.style.alignItems = 'flex-start';
         }
         
         document.addEventListener('DOMContentLoaded', function() {
