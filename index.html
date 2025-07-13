@@ -15,10 +15,26 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #003366 0%, #001133 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .header h1 {
+            color: #fff;
+            font-size: 28px;
+            margin: 0;
         }
         
         .container {
@@ -31,6 +47,8 @@
             width: 90%;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 50vh auto;
+            transform: translateY(-50%);
         }
         
         .logo {
@@ -116,7 +134,7 @@
             display: none;
             width: 100%;
             max-width: 900px;
-            padding: 20px;
+            padding: 120px 40px 40px 40px;
         }
         
         .section {
@@ -190,24 +208,6 @@
             border-left: 4px solid #FFD700;
         }
         
-        .logout-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #fff;
-            transition: all 0.3s;
-        }
-        
-        .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
     </style>
 </head>
 <body>
@@ -227,32 +227,18 @@
         </div>
     </div>
     
+    <div class="header">
+        <h1>PallyPlay</h1>
+    </div>
+    
     <div id="protectedContent">
-        <button class="logout-btn" onclick="logout()">Logout</button>
         
         <!-- Current European Youth Issues -->
         <div class="section">
             <h2>Current European Youth Issues</h2>
             <p>Young football fans across Europe face specific social challenges that traditional sports apps don't address.</p>
             
-            <div class="countries">
-                <div class="country">
-                    <h4>🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</h4>
-                    <p>Online toxicity in football discussions, tribal behavior in social media</p>
-                </div>
-                <div class="country">
-                    <h4>🇫🇷 France</h4>
-                    <p>Cultural tensions reflected in football fandom, community fragmentation</p>
-                </div>
-                <div class="country">
-                    <h4>🇩🇪 Germany</h4>
-                    <p>Winning-at-all-costs mentality undermining fair play values</p>
-                </div>
-                <div class="country">
-                    <h4>🇸🇪 Sweden</h4>
-                    <p>Declining connection to football heritage and community traditions</p>
-                </div>
-            </div>
+            <p><strong>For example:</strong> England - online toxicity in football discussions; France - cultural tensions in fandom; Germany - winning-at-all-costs mentality undermining fair play.</p>
             
             <p>200 million young Europeans engage with football weekly. Most apps focus only on scores and stats, missing opportunities to address these underlying social issues.</p>
         </div>
@@ -260,16 +246,16 @@
         <!-- What PallyPlay Does -->
         <div class="section">
             <h2>What PallyPlay Does</h2>
-            <p>A prediction gaming platform that uses football matches as opportunities for character development. Simple concept: combine match excitement with brief reflection moments.</p>
+            <p>A challenge gaming platform that uses football matches as opportunities for character development. Simple concept: combine match excitement with brief reflection moments.</p>
             
             <div class="highlight-box">
                 <h3>Core Mechanism</h3>
-                <p>Players make predictions during live matches. Rankings change in real-time with every goal, card, and event. After matches, players answer 2-3 reflection questions specific to their country's social challenges. No answers = no experience points.</p>
+                <p>Players make challenges during live matches. Rankings change in real-time with every goal, card, and event. After matches, players answer 2-3 reflection questions specific to their country's social challenges. No answers = no experience points.</p>
             </div>
             
             <h3>Technical Features</h3>
             <ul>
-                <li>Real-time betting with dynamic leaderboards</li>
+                <li>Real-time challenges with dynamic leaderboards</li>
                 <li>GPS detection for stadium attendance (no gaming advantages)</li>
                 <li>WhatsApp integration for friend group formation</li>
                 <li>Post-match reflection questions tailored to local issues</li>
@@ -279,18 +265,18 @@
         <!-- Why Young People Use It -->
         <div class="section">
             <h2>Why Young People Use It</h2>
-            <p>Unlike traditional prediction apps, rankings change constantly during matches. No waiting 90 minutes for results.</p>
+            <p>Unlike traditional challenge apps, rankings change constantly during matches. No waiting 90 minutes for results.</p>
             
             <h3>Engagement Mechanics</h3>
             <ul>
-                <li>Immediate feedback: Predict first goal at 25 minutes, goal scored at 12 minutes = ranking drops instantly</li>
+                <li>Immediate feedback: Challenge first goal at 25 minutes, goal scored at 12 minutes = ranking drops instantly</li>
                 <li>Social pressure: Friend notifications when positions change</li>
-                <li>Achievement system: Recognize sportsmanship, not just correct predictions</li>
+                <li>Achievement system: Recognize sportsmanship, not just correct challenges</li>
                 <li>Stadium experiences: Connect with other fans when physically present</li>
             </ul>
             
             <div class="highlight-box">
-                <p><strong>Example:</strong> Manchester derby. User leads predictions until minute 30 when Haaland scores. Drops to 4th place immediately. Friend overtakes. Notifications buzz. Heart rate stays elevated entire match.</p>
+                <p><strong>Example:</strong> Manchester derby. User leads challenges until minute 30 when Haaland scores. Drops to 4th place immediately. Friend overtakes. Notifications buzz. Heart rate stays elevated entire match.</p>
             </div>
         </div>
 
@@ -316,56 +302,6 @@
             </ul>
         </div>
 
-        <!-- Practical Implementation -->
-        <div class="section">
-            <h2>Practical Implementation</h2>
-            
-            <h3>Phase 1: Single League Pilot</h3>
-            <ul>
-                <li>Partner with one major European league</li>
-                <li>5,000 users across 4 countries</li>
-                <li>Focus on Champions League matches for broad appeal</li>
-                <li>Measure engagement rates and behavioral change indicators</li>
-            </ul>
-            
-            <h3>Phase 2: Multi-League Expansion</h3>
-            <ul>
-                <li>Add Premier League, La Liga, Bundesliga partnerships</li>
-                <li>50,000 active users</li>
-                <li>Club-specific content and messaging</li>
-                <li>Integration with club supporter databases</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <h3>Business Model</h3>
-                <p>Revenue sharing with partner leagues and clubs. Premium features for enhanced analytics. Educational licensing to schools and youth organizations.</p>
-            </div>
-        </div>
-
-        <!-- Expected Outcomes -->
-        <div class="section">
-            <h2>Expected Outcomes</h2>
-            
-            <h3>Measurable Changes (6-month timeline)</h3>
-            <ul>
-                <li>20% reduction in toxic language in app-based football discussions</li>
-                <li>Increased cross-cultural appreciation among users</li>
-                <li>Higher rates of positive leadership behavior in peer groups</li>
-                <li>Improved conflict resolution skills during competitive situations</li>
-            </ul>
-            
-            <h3>Long-term Impact (2-year timeline)</h3>
-            <ul>
-                <li>Cultural shift in how young Europeans engage with football</li>
-                <li>Reduced tribalism in supporter cultures</li>
-                <li>Stronger connection between football clubs and community values</li>
-                <li>Model replicable in other sports and regions</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <p><strong>Reality Check:</strong> Not all users will engage with reflection questions. Success means 60-70% participation rates and measurable positive change in that group. Even partial adoption across 200M young Europeans represents significant social impact.</p>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -405,8 +341,6 @@
         function showProtectedContent() {
             document.getElementById('loginContainer').style.display = 'none';
             document.getElementById('protectedContent').style.display = 'block';
-            document.body.style.alignItems = 'flex-start';
-            document.body.style.padding = '20px';
         }
         
         function logout() {
