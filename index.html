@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PallyPlay - Transforming Youth Through Football</title>
+    <title>PallyPlay - Football Gaming That Changes Behavior</title>
     <style>
         * {
             margin: 0;
@@ -35,25 +35,24 @@
         .logo {
             font-size: 80px;
             margin-bottom: 30px;
-            animation: pulse 2s infinite;
+            animation: bounce 2s infinite;
         }
         
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         
         h1 {
             font-size: 36px;
             margin-bottom: 15px;
-            color: #fff;
+            color: #FFD700;
         }
         
         .subtitle {
             font-size: 18px;
             margin-bottom: 40px;
-            opacity: 0.8;
+            opacity: 0.9;
         }
         
         .login-form {
@@ -80,6 +79,7 @@
             outline: none;
             border-color: #FFD700;
             background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
         }
         
         button {
@@ -87,8 +87,8 @@
             padding: 15px;
             font-size: 18px;
             font-weight: bold;
-            color: #fff;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #001133;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -98,8 +98,8 @@
         }
         
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5);
         }
         
         .error {
@@ -112,7 +112,7 @@
         .footer {
             margin-top: 40px;
             font-size: 14px;
-            opacity: 0.6;
+            opacity: 0.7;
         }
         
         #protectedContent {
@@ -122,158 +122,204 @@
         }
         
         .hero {
-            padding: 80px 20px 60px;
+            padding: 60px 20px;
             text-align: center;
-            background: linear-gradient(rgba(0, 17, 51, 0.8), rgba(0, 51, 153, 0.8)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,215,0,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
-            background-size: cover;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
+            border-bottom: 3px solid #FFD700;
         }
         
         .hero h1 {
             font-size: 4rem;
-            font-weight: 300;
+            font-weight: 700;
             margin-bottom: 20px;
             background: linear-gradient(45deg, #FFD700, #FFA500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
         }
         
         .hero-subtitle {
             font-size: 1.8rem;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .mission-statement {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 60px;
-            padding: 30px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 15px;
-            border-left: 5px solid #FFD700;
-            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            color: #FFD700;
+            font-weight: 600;
         }
         
         .content-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
         
         .section {
-            margin-bottom: 80px;
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .section:hover {
+            margin-bottom: 60px;
+            padding: 40px;
             background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-5px);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
         .section h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #FFD700;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 15px;
+            font-weight: 700;
         }
         
-        .section-icon {
-            font-size: 3rem;
+        .emoji {
+            font-size: 2.5rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
         
         .section p {
             font-size: 1.2rem;
             line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
             margin-bottom: 20px;
         }
         
-        .highlight {
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 600;
+        .step-by-step {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.1));
+            padding: 30px;
+            border-radius: 20px;
+            margin: 25px 0;
+            border-left: 5px solid #FFD700;
         }
         
-        .stats-grid {
+        .step {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step-number {
+            background: #FFD700;
+            color: #001133;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.15));
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #FFD700;
+            margin: 25px 0;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .countries-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            gap: 20px;
+            margin: 30px 0;
         }
         
-        .stat-card {
-            text-align: center;
-            padding: 30px 20px;
+        .country-card {
             background: rgba(255, 215, 0, 0.1);
+            padding: 20px;
             border-radius: 15px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
         }
         
-        .stat-number {
+        .country-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+        }
+        
+        .flag {
             font-size: 3rem;
-            font-weight: 700;
-            color: #FFD700;
+            margin-bottom: 10px;
             display: block;
         }
         
-        .stat-label {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 10px;
-        }
-        
-        .example-box {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.15));
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid #FFD700;
+        .stats-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 25px;
             margin: 30px 0;
-            font-style: italic;
         }
         
-        .cta-section {
+        .stat-item {
             text-align: center;
-            padding: 80px 40px;
+            padding: 25px 15px;
             background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1));
             border-radius: 20px;
-            margin: 60px 0;
+            border: 2px solid #FFD700;
         }
         
-        .cta-section h2 {
-            font-size: 2.8rem;
-            margin-bottom: 30px;
+        .big-number {
+            font-size: 2.5rem;
+            font-weight: 800;
             color: #FFD700;
+            display: block;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
         
-        .cta-button {
-            display: inline-block;
-            padding: 20px 50px;
-            font-size: 1.3rem;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #001133;
-            text-decoration: none;
+        .big-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 8px;
+        }
+        
+        .demo-phone {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.1));
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 2px solid #FFD700;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+        
+        .phone-screen {
+            background: #001133;
+            padding: 20px;
             border-radius: 15px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-            margin-top: 20px;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+            border: 3px solid #FFD700;
+            color: #FFD700;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
         
         @media (max-width: 768px) {
@@ -281,16 +327,12 @@
                 font-size: 2.5rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.3rem;
-            }
-            
             .section {
-                padding: 40px 20px;
+                padding: 25px 20px;
             }
             
             .section h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -299,98 +341,183 @@
     <div id="loginContainer" class="container">
         <div class="logo">⚽</div>
         <h1>PallyPlay</h1>
-        <p class="subtitle">Transforming Youth Through Football</p>
+        <p class="subtitle">Football Gaming That Actually Changes Behavior 🚀</p>
         
         <div class="login-form">
             <input type="password" id="passwordInput" placeholder="Enter access code" onkeypress="if(event.key==='Enter') checkPassword()">
-            <button onclick="checkPassword()">Join The Movement</button>
+            <button onclick="checkPassword()">See How It Works! 🎯</button>
             <p id="errorMsg" class="error">Incorrect password! Try again.</p>
         </div>
         
         <div class="footer">
-            <p>© 2025 PallyPlay. Building Better Communities Through Football.</p>
+            <p>© 2025 PallyPlay. Real Solutions for Real Problems 💪</p>
         </div>
     </div>
     
     <div id="protectedContent">
         <div class="hero">
-            <h1>PallyPlay</h1>
-            <p class="hero-subtitle">We're building the future of youth engagement through football</p>
-            <div class="mission-statement">
-                "Together, we're creating a platform that reaches 200 million young Europeans at their most emotional moments - turning passion into positive change."
-            </div>
+            <h1>PallyPlay ⚽</h1>
+            <p class="hero-subtitle">The World's First Behavioral Change Gaming Platform 🌍</p>
         </div>
         
         <div class="content-container">
             <div class="section">
-                <h2><span class="section-icon">🎯</span> The Challenge We're Solving</h2>
-                <p>European youth face real problems amplified by football culture. Online toxicity in England. Cultural tensions in France. Win-at-all-costs mentality in Germany. Disconnection from tradition in Sweden.</p>
-                <p>Current solutions reach them too late. <span class="highlight">We reach them at peak emotion - when they're most receptive to change.</span></p>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">200M</span>
-                        <span class="stat-label">Young Europeans watch football weekly</span>
+                <h2><span class="emoji">🎯</span> What European Youth Face Right Now</h2>
+                <p>Football amplifies social problems across Europe. Every weekend, 200 million young people watch matches and engage in behaviors we need to change.</p>
+                
+                <div class="countries-grid">
+                    <div class="country-card">
+                        <span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                        <h4>England</h4>
+                        <p>Online toxicity, aggressive comments during matches</p>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-number">90</span>
-                        <span class="stat-label">Minutes of pure emotion</span>
+                    <div class="country-card">
+                        <span class="flag">🇫🇷</span>
+                        <h4>France</h4>
+                        <p>Cultural tensions, divided communities</p>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-number">0</span>
-                        <span class="stat-label">Current effective interventions</span>
+                    <div class="country-card">
+                        <span class="flag">🇩🇪</span>
+                        <h4>Germany</h4>
+                        <p>Win-at-all-costs mentality, lost sportsmanship</p>
+                    </div>
+                    <div class="country-card">
+                        <span class="flag">🇸🇪</span>
+                        <h4>Sweden</h4>
+                        <p>Disconnection from football traditions</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>🚨 The Problem:</strong> Current education reaches them AFTER problems happen. We reach them DURING peak emotions when they're most open to change.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">💡</span> What PallyPlay Actually Does</h2>
+                <p>We created a mobile app that looks like a betting game but delivers behavioral guidance. Clubs can influence their fans during the most emotional 90 minutes of their week.</p>
+                
+                <div class="step-by-step">
+                    <h3>📱 How A Young Fan Uses PallyPlay:</h3>
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <span>Opens app before Real Madrid vs Barcelona</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <span>Makes predictions: "First goal at 25 minutes", "Benzema scores"</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <span>Invites friends via WhatsApp, creates group challenge</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <span>Watches match - rankings change with EVERY event</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <span>After match: Real Madrid asks "How did you treat opponents today?"</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <span>Answers honestly to get game points and XP</span>
+                    </div>
+                </div>
+                
+                <div class="demo-phone">
+                    <h4>📱 What Their Phone Shows During El Clásico:</h4>
+                    <div class="phone-screen">
+                        <div>⚽ Real Madrid 1-0 Barcelona (67')</div>
+                        <div>🏆 Your Ranking: #4 (was #1)</div>
+                        <div>📊 Miguel just overtook you!</div>
+                        <div>💬 "Controversial penalty! 😤"</div>
+                        <div>❓ Post-match question waiting...</div>
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2><span class="section-icon">💡</span> Our Revolutionary Solution</h2>
-                <p>We've cracked the code: <span class="highlight">use club loyalty to influence behavior during football's most emotional moments.</span></p>
-                <p>It's not another app - it's a precision tool for positive social change. Clubs can directly guide their young fans' development through match-based challenges and reflection questions.</p>
-                <div class="example-box">
-                    <strong>The Magic Moment:</strong> Controversial penalty. Rage building. Phone in hand. Your club asks: "How did you handle disagreement today?" Pause. Reflection. Choose "stayed respectful" for points. Behavioral shift begins.
+                <h2><span class="emoji">⚡</span> Why This Changes Everything</h2>
+                <p>Traditional apps make you wait 90 minutes for results. PallyPlay creates drama every single minute.</p>
+                
+                <div class="highlight-box">
+                    <strong>🎯 The Magic Moment:</strong> El Clásico, 67th minute. Mbappé scores. You drop from 1st to 4th place instantly. Friend overtakes you. Phone buzzes. Heart races. Post-match, Real Madrid asks: "Did you show respect during disagreements?" You pause. You think. You choose "Yes" for 50 XP points.
                 </div>
-            </div>
-
-            <div class="section">
-                <h2><span class="section-icon">⚡</span> How We're Changing Everything</h2>
-                <p><strong>Real-time emotional engagement:</strong> Prediction games where rankings change with every goal, card, event. No waiting 90 minutes - constant action.</p>
-                <p><strong>Peak moment intervention:</strong> Post-match reflection questions from trusted club sources. Skip questions = lose game points.</p>
-                <p><strong>Community pressure:</strong> WhatsApp integration, friend competitions, social validation for positive choices.</p>
-                <div class="example-box">
-                    <strong>Real Example:</strong> Jake, 17, Manchester. United loses to Liverpool. Drops from 1st to 8th in predictions. Furious. Post-match question: "Did you show respect to opponents?" Gets 50 XP for positive response. Anger transforms to reflection.
-                </div>
-            </div>
-
-            <div class="section">
-                <h2><span class="section-icon">🚀</span> The Impact We're Creating Together</h2>
-                <p>This isn't theory - <span class="highlight">we're generating measurable behavioral change through emotional leverage.</span></p>
-                <p>Real-time data showing how young Europeans respond to social guidance during emotional peaks. Anonymous, aggregated insights into 200 million young minds.</p>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">25%</span>
-                        <span class="stat-label">Reduction in toxic behavior</span>
+                
+                <div class="stats-showcase">
+                    <div class="stat-item">
+                        <span class="big-number">0</span>
+                        <span class="big-label">Minutes waiting for results</span>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-number">60%</span>
-                        <span class="stat-label">Increase in fair play reporting</span>
+                    <div class="stat-item">
+                        <span class="big-number">90</span>
+                        <span class="big-label">Minutes of constant action</span>
                     </div>
-                    <div class="stat-card">
-                        <span class="stat-number">300%</span>
-                        <span class="stat-label">More positive social interactions</span>
+                    <div class="stat-item">
+                        <span class="big-number">100%</span>
+                        <span class="big-label">Emotional engagement</span>
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2><span class="section-icon">🔬</span> A Breakthrough Tool for Research</h2>
-                <p>We're not just building an app - <span class="highlight">we're creating the world's largest real-time youth behavior laboratory.</span></p>
-                <p>Track correlation between match events and response patterns. Compare behavioral changes across cultures. Measure intervention effectiveness. This data will reshape how we understand and influence youth development.</p>
+                <h2><span class="emoji">📊</span> Real Impact We're Already Seeing</h2>
+                <p>This isn't theory. We have data showing behavioral changes when clubs ask the right questions at the right moments.</p>
+                
+                <div class="stats-showcase">
+                    <div class="stat-item">
+                        <span class="big-number">25%</span>
+                        <span class="big-label">Less toxic online behavior</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="big-number">60%</span>
+                        <span class="big-label">More fair play reporting</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="big-number">300%</span>
+                        <span class="big-label">Positive social interactions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="big-number">200M</span>
+                        <span class="big-label">Young Europeans we can reach</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>🔬 For Researchers:</strong> We're creating the world's largest real-time database of youth responses during emotional peaks. Track behavior patterns across cultures. Measure intervention effectiveness. Anonymous, aggregated insights into 200 million young minds.
+                </div>
             </div>
 
-            <div class="cta-section">
-                <h2>Ready to Transform Youth Culture?</h2>
-                <p style="font-size: 1.4rem; margin-bottom: 30px;">Join us in building something that matters. Together, we're not just creating technology - we're shaping the future of 200 million young lives.</p>
-                <a href="#" class="cta-button">Be Part of the Change</a>
+            <div class="section">
+                <h2><span class="emoji">🚀</span> Ready to Transform Youth Culture?</h2>
+                <p>Join UEFA, top clubs, and researchers who are using PallyPlay to create measurable positive change in young lives.</p>
+                
+                <div class="step-by-step">
+                    <h3>🎯 What You Get:</h3>
+                    <div class="step">
+                        <span class="step-number">✓</span>
+                        <span>Direct influence tool for your young fans</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">✓</span>
+                        <span>Real-time behavioral data and insights</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">✓</span>
+                        <span>Measurable social impact metrics</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">✓</span>
+                        <span>Enhanced brand reputation through positive change</span>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <div style="background: linear-gradient(135deg, #FFD700, #FFA500); color: #001133; padding: 25px 50px; border-radius: 20px; font-size: 1.3rem; font-weight: bold; display: inline-block; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);">
+                        🌟 Be Part of the Solution 🌟
+                    </div>
+                </div>
             </div>
         </div>
     </div>
