@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PallyPlay - EMOTION EXCITEMENT RESPECT</title>
+    <title>PallyPlay - UEFA Partnership Initiative</title>
     <style>
         * {
             margin: 0;
@@ -156,6 +156,7 @@
         .content-card h3 {
             margin-bottom: 15px;
             font-size: 24px;
+            color: #FFD700;
         }
         
         .logout-btn {
@@ -176,31 +177,36 @@
         .logout-btn:hover {
             background: rgba(255, 255, 255, 0.2);
         }
+
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div id="loginContainer" class="container">
         <div class="logo">⚽</div>
         <h1>PallyPlay</h1>
-        <p class="subtitle">UEFA Partnership Proposal</p>
+        <p class="subtitle">UEFA Partnership Initiative</p>
         
         <div class="login-form">
-            <input type="password" id="passwordInput" placeholder="Syötä salasana" onkeypress="if(event.key==='Enter') checkPassword()">
-            <button onclick="checkPassword()">Kirjaudu sisään</button>
-            <p id="errorMsg" class="error">Väärä salasana! Yritä uudelleen.</p>
+            <input type="password" id="passwordInput" placeholder="Enter access code" onkeypress="if(event.key==='Enter') checkPassword()">
+            <button onclick="checkPassword()">Access Platform</button>
+            <p id="errorMsg" class="error">Incorrect password! Try again.</p>
         </div>
         
         <div class="footer">
-            <p>© 2024 PallyPlay. Kaikki oikeudet pidätetään.</p>
+            <p>© 2025 PallyPlay. UEFA Partnership Initiative.</p>
         </div>
     </div>
     
     <div id="protectedContent">
-        <button class="logout-btn" onclick="logout()">Kirjaudu ulos</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
         
         <div class="welcome-section">
             <h1>⚽ EMOTION • EXCITEMENT • RESPECT</h1>
-            <p>Football gaming that prevents social problems</p>
+            <p>Football gaming that promotes UEFA values across Europe</p>
         </div>
         
         <div class="content-grid">
@@ -208,64 +214,86 @@
                 <h3>🎯 The Problem</h3>
                 <p>Young people across Europe face different social challenges:</p>
                 <ul style="text-align: left; margin-top: 15px;">
-                    <li><strong>Sweden:</strong> Gang violence, weapons</li>
-                    <li><strong>France:</strong> Racism, discrimination</li>
-                    <li><strong>Finland:</strong> Bullying, mental health</li>
-                    <li><strong>Everywhere:</strong> Social media toxicity</li>
+                    <li><strong>England:</strong> Online toxicity, lack of positive role models</li>
+                    <li><strong>France:</strong> Social fragmentation, community disconnect</li>
+                    <li><strong>Germany:</strong> Competition over values, fair play erosion</li>
+                    <li><strong>Sweden:</strong> Limited engagement with football heritage</li>
                 </ul>
             </div>
             
             <div class="content-card">
                 <h3>💡 Our Solution</h3>
-                <p>Post-match values check integrated into football gaming.</p>
+                <p><span class="highlight">"Statistics Go CRAZY WILD"</span> - Dynamic real-time engagement:</p>
                 <ul style="text-align: left; margin-top: 15px;">
-                    <li><strong>During matches:</strong> Predict goals, cards, results</li>
-                    <li><strong>After matches:</strong> Answer values questions</li>
-                    <li><strong>No answers:</strong> No points awarded</li>
-                    <li><strong>Result:</strong> Behavior change through gaming</li>
+                    <li><strong>Live Predictions:</strong> Rankings change with every goal, card, event</li>
+                    <li><strong>No Boring Moments:</strong> Excitement from kickoff to final whistle</li>
+                    <li><strong>Real-time XP:</strong> See your position change instantly</li>
+                    <li><strong>Values Integration:</strong> Post-match UEFA educational questions</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3>🏟️ Stadium Features</h3>
+                <p><span class="highlight">GPS-powered stadium communication</span> for live events:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>Auto Check-in:</strong> GPS detection at UEFA venues</li>
+                    <li><strong>Live Messages:</strong> Real-time communication with stadium fans</li>
+                    <li><strong>Custom Questions:</strong> Stadium-specific values challenges</li>
+                    <li><strong>Memory Collection:</strong> Digital passport of stadium visits</li>
                 </ul>
             </div>
             
             <div class="content-card">
                 <h3>🌍 Country-Specific Impact</h3>
-                <p>Tailored questions address local social issues:</p>
+                <p>Tailored values education addressing local social issues:</p>
                 <ul style="text-align: left; margin-top: 15px;">
-                    <li>"Have I avoided violence recently?"</li>
-                    <li>"Have I spoken against discrimination?"</li>
-                    <li>"Have I helped a lonely friend?"</li>
-                    <li>"Do I respect fair play rules?"</li>
+                    <li><strong>England:</strong> "How did you handle disagreement during the match?"</li>
+                    <li><strong>France:</strong> "Did you include everyone in group discussions?"</li>
+                    <li><strong>Germany:</strong> "Did you prioritize fair play over winning?"</li>
+                    <li><strong>Sweden:</strong> "Did you learn about football culture today?"</li>
                 </ul>
             </div>
             
             <div class="content-card">
                 <h3>🏆 UEFA Values Integration</h3>
-                <p>Your values become the core of competitive gaming.</p>
+                <p>Core values become competitive gaming mechanics:</p>
                 <ul style="text-align: left; margin-top: 15px;">
-                    <li><strong>EMOTION:</strong> Managing feelings and defeats</li>
-                    <li><strong>EXCITEMENT:</strong> Positive energy and support</li>
-                    <li><strong>RESPECT:</strong> Fair play and environment</li>
-                    <li><strong>Impact:</strong> 200M+ young Europeans</li>
+                    <li><strong>RESPECT:</strong> Fair play recognition and peer support</li>
+                    <li><strong>UNITY:</strong> Cross-cultural group challenges</li>
+                    <li><strong>EXCELLENCE:</strong> Sportsmanship achievements</li>
+                    <li><strong>Impact:</strong> No values answers = No XP awarded</li>
                 </ul>
             </div>
 
             <div class="content-card">
-                <h3>📱 Technical Readiness</h3>
-                <p>Working prototype. Ready for partnership.</p>
+                <h3>📱 Technical Innovation</h3>
+                <p><span class="highlight">Production-ready PWA</span> with real-time capabilities:</p>
                 <ul style="text-align: left; margin-top: 15px;">
-                    <li><strong>Platform:</strong> Progressive Web App</li>
-                    <li><strong>Data:</strong> Live match integration</li>
-                    <li><strong>Engagement:</strong> 85% weekly retention</li>
-                    <li><strong>Scale:</strong> All European leagues</li>
+                    <li><strong>Live Tracking:</strong> Dynamic statistics and rankings</li>
+                    <li><strong>Stadium GPS:</strong> Automatic venue detection</li>
+                    <li><strong>Social Groups:</strong> "Pallys" system for friend management</li>
+                    <li><strong>WhatsApp Integration:</strong> Seamless group invites</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>🎮 Dynamic Engagement</h3>
+                <p><span class="highlight">Revolutionary prediction system</span> eliminates boredom:</p>
+                <ul style="text-align: left; margin-top: 15px;">
+                    <li><strong>First Goal Bet:</strong> Lead initially → goal scored → position changes</li>
+                    <li><strong>Card Predictions:</strong> Yellow card → rankings shuffle instantly</li>
+                    <li><strong>Live Leaderboards:</strong> Friends compete in real-time</li>
+                    <li><strong>Social Pressure:</strong> WhatsApp-style live notifications</li>
                 </ul>
             </div>
 
             <div class="content-card">
                 <h3>🚀 Partnership Proposal</h3>
-                <p>First-ever social impact gaming platform.</p>
+                <p><span class="highlight">First-ever official UEFA values gaming platform:</span></p>
                 <ul style="text-align: left; margin-top: 15px;">
-                    <li><strong>UEFA Branding:</strong> Official values program</li>
-                    <li><strong>Pilot:</strong> Champions League qualifiers</li>
-                    <li><strong>Metrics:</strong> Measurable social impact</li>
+                    <li><strong>Pilot Program:</strong> Champions League qualifiers</li>
+                    <li><strong>Target:</strong> 200M+ young Europeans</li>
+                    <li><strong>Measurement:</strong> Quantifiable social impact</li>
                     <li><strong>Legacy:</strong> Prevent problems, not just react</li>
                 </ul>
             </div>
@@ -273,33 +301,24 @@
     </div>
 
     <script>
-        // VAIHDA TÄMÄ SALASANA!
         const correctPassword = 'pallyplay2024';
         
-        // Tarkista onko käyttäjä jo kirjautunut
         if (sessionStorage.getItem('pallyplayAuth') === 'true') {
             showProtectedContent();
         }
         
         function checkPassword() {
-            console.log('checkPassword called');
             const input = document.getElementById('passwordInput');
             const errorMsg = document.getElementById('errorMsg');
             
-            if (!input) {
-                console.error('Password input not found');
-                return;
-            }
+            if (!input) return;
             
             const password = input.value.trim();
-            console.log('Password length:', password.length);
             
             if (password === correctPassword) {
-                console.log('Password correct, showing protected content');
                 sessionStorage.setItem('pallyplayAuth', 'true');
                 showProtectedContent();
             } else {
-                console.log('Password incorrect');
                 if (errorMsg) {
                     errorMsg.style.display = 'block';
                 }
@@ -327,16 +346,12 @@
             location.reload();
         }
         
-        // Lisää hieno efekti salasanakentälle
         document.addEventListener('DOMContentLoaded', function() {
             const input = document.getElementById('passwordInput');
             if (input) {
                 input.focus();
             }
         });
-        
-        // Debug: lisää console.log nähdäksesi toimiiko JavaScript
-        console.log('PallyPlay sivu ladattu onnistuneesti!');
     </script>
 </body>
 </html>
